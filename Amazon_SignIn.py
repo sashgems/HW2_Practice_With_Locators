@@ -1,31 +1,29 @@
 from selenium.webdriver.common.by import By
 
 #1 Amazon Logo
-driver.find_element(By.XPATH, "//p[contains(@class,'Search Amazon')")
-# $x//'p[contains(@class,"Search Amazon"])'
-
-driver.find_element(By.XPATH, "//i[@aria-label='Search Amazon']")
-
-driver.find_element(By.XPATH, '//p[contains(@class,"Search Amazon"])')
-driver.find_element(By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
-"//i[@aria-label='Search Amazon']")
-
+driver.find_element(By_XPATH, "//i[contains(@class, 'icon-logo')]//i[contains(@aria-label, 'Amazon')]")
+# $x("//i[contains(@class, 'icon-logo')]//i[contains(@aria-label, 'Amazon')]")
 
 #2. Email Field
+driver.find_element(By_ID, 'ap_email_login')
+#$x("//input[id='ap_email_login']")
 
 #3. Continue Button
+driver.find_element(By_XPATH, "//input[class='a-button-input']" )
+#$x("//input[class='a-button-input']")
 
-#4. Conditions of use Link
+#4. Conditions of Use Link
+driver.find_element(By_XPATH, "//p[contains(@class, 'legal-text')]//a[contains(@href, 'conditions_of_use')]" )
+#$X("//p[contains(@class, 'legal-text')]//a[contains(@href, 'conditions_of_use')]")
 
 #5. Privacy Notice Link
 driver.find_element(By.XPATH, "a[contains(@href='ref=ap_signin_notification_privacy_notice?')"])
 #CONFIRMED XPATH ON SITE W/JAVASCRIPT CDOE:
 #$x//("a[contains(@href='ref=ap_signin_notification_privacy_notice?')"])
 
-#7. Forgot password link  (n/a)
-#The forgot password link is not found on the sign in page as shown in HW directions.
-#If you enter an email in the field and press continue,
-# # then you have the option to click forgot password on another URL.
+#7. Forgot password link  (n/a on the page listed)
+# If you enter an email in the field and press continue on the sign in page
+# you have the option to click forgot password on another URL.
 #URL: https://www.amazon.com/ax/claim?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fhelp%2Fcustomer%2Faccount-issues%2Fref%3Dnav_ya_signin%3Fie%3DUTF8&policy_handle=Retail-Checkout&openid.mode=checkid_setup&openid.assoc_handle=usflex&arb=ff6e97f7-cc8b-4916-a700-ff400352eb00
 # If you have navigated to that webpage then the below Locator works for Forgot Password Link
 driver.find_element(By.ID, "auth-fpp-link-bottom")
