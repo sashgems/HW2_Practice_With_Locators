@@ -13,6 +13,7 @@
         # Create your Amazon account button
 
 # 2. Create a test case for the SignIn page using python & selenium script. 
+    # Answers in target_sign_in.py
 (Make sure to use Incognito browser mode when searching for locators)
 
 # Test Case: Users can navigate to SignIn page
