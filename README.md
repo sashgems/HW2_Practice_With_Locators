@@ -1,7 +1,8 @@
 # Practicing With Locators on Amazon Sign In Page 
 # 1. Practice with locators. 
 # Create locators + search strategy for these page elements of Amazon Sign in page:
-    # Amazon.SignIn.py file contains the locators and search strategy for the following 
+    # amazon_locator_practice.py
+    # contains the locators and search strategy for the following 
         # Amazon logo
         # Email field
         # Continue button
@@ -14,6 +15,8 @@
 
 # 2. Create a test case for the SignIn page using python & selenium script. 
     # Answers in target_sign_in.py
+    # Steps refactored into file target_sign_in_steps.py and target_signin.feature
+    # Included target_search.feature file that we went over in class
 (Make sure to use Incognito browser mode when searching for locators)
 
 # Test Case: Users can navigate to SignIn page
