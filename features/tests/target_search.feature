@@ -1,13 +1,11 @@
-# Created by sashagemis at 9/07/25
-Feature: # Enter feature name here
-  # Enter feature description here
-
-  Scenario: # Enter scenario name here
-    # Enter steps here
 
   Feature: Tests for Target search functionality
+    # Description Target Sign In Page HW
 
-  Scenario: User can search for a product on Target
+  Scenario: User can navigate to the SignIn Page with Target
     Given Open target main page
-    When Search for a product
-    Then Verify search results are shown
+
+    When Click Account button
+    When Click SignIn button from side navigation bar
+
+    Then Verify Sign In or Create Account Text is shown

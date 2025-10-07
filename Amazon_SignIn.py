@@ -1,3 +1,4 @@
+# Practice With Locators HW Assignment
 from selenium.webdriver.common.by import By
 
 #1 Amazon Logo
