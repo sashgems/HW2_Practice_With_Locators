@@ -1,28 +1,29 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 
-# get the path to the ChromeDriver executable
-driver_path = ChromeDriverManager().install()
-
-# create a new Chrome browser instance
-service = Service(driver_path)
-driver = webdriver.Chrome(service=service)
+# Start Chrome browser:
+driver = webdriver.Chrome()
 driver.maximize_window()
+driver.implicitly_wait(5)
 
-# open the url
+# Open target.com
 driver.get('https://www.target.com/')
 
 # click account button
-driver.find_element(By.CLASS, 'sc-272da4bf-3 jfjzNu h-margin-r-x3').click()
+driver.find_element(By.XPATH, "//*[@data-test='@web/AccountLink']").click()
+driver.find_element(By.XPATH, "//*[@data-test='accountNav-signIn']").click()
 
-# click sign in from side menu
-driver.find_element(By_XPATH, "//button[data-test='accountNav-signIn']" ).click()
+# Verification
 
-#4. Verify SignIn page opened:
-#“Sign in or create account” text is shown,
-#SignIn button is shown (you can just use driver.find_element() to check for element’s presence, no need to assert here)
-driver.find_element(By_XPATH, "//*[text()='Sign in']")
-driver.find_element(By.XPATH, "//button[contains(@class,'class='styles_ndsBaseButton')]")
+driver.find_element(By.XPATH, "//*[text()='Sign in or create account']")
+
+#More complex way to do it
+#expected = 'Sign in or create account'
+#actual = driver.find_element(By.XPATH, "//h1[contains(@class, 'styles_ndsHeading')]").text
+#assert expected == actual, f'Expected {expected} did not match actual {actual}'
+
+# Make sure login button is shown
+driver.find_element(By.ID, 'login')
+
+driver.quit()
