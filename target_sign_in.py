@@ -1,3 +1,4 @@
+#HW Lesson 2
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
